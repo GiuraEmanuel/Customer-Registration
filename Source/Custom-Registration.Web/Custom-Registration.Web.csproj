@@ -20,8 +20,4 @@
     <ProjectReference Include="..\Custom-Registration.CodeFirst\Custom-Registration.CodeFirst.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Customer\" />
-  </ItemGroup>
-
 </Project>
