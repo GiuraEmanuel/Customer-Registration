@@ -18,11 +18,22 @@ namespace Custom_Registration.Web.Controllers
         [HttpGet("Customers")]
         public async Task<IActionResult> GetAllCustomers()
         {
-            var customers = await _appDbContext.Customers.Select(c=> new CustomerViewModel.Customer(c.Name,c.Website,c.Email,c.PhoneNumber)).ToListAsync();
+            var customers = await _appDbContext.Customers.Select(c => new CustomerViewModel.Customer(c.Id, c.Name, c.Website, c.Email, c.PhoneNumber)).ToListAsync();
 
             var customerViewModel = new CustomerViewModel(customers);
 
             return View(customerViewModel);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Detail(int id)
+        {
+            var customerInfo = await _appDbContext.Customers.Where(c => c.Id == id)
+                .Select(c => new CustomerDetailsViewModel(c.Id, c.Name, c.Website, c.Email, c.PhoneNumber,
+                    c.PostalAddressId, c.PostalAddress, c.InvoiceAddressId, c.InvoiceAddress)).SingleOrDefaultAsync();
+
+
+            return View(customerInfo);
         }
     }
 }

@@ -13,13 +13,16 @@ namespace Custom_Registration.Web.Models
 
         public class Customer
         {
-            public Customer(string name, string website, string email, string phoneNumber)
+            public Customer(int id, string name, string website, string email, string phoneNumber)
             {
+                Id = id;
                 Name = name;
                 Website = website;
                 Email = email;
                 PhoneNumber = phoneNumber;
             }
+
+            public int Id { get; set; }
 
             public string Name { get; set; }
 
