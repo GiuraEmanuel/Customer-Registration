@@ -1,0 +1,3 @@
+To create database using migrations:
+"Right click the web project, Open Terminal, Run command: dotnet ef migrations add IntialCreate --project (put project folder here)"
+dotnet ef migrations add AddTestRecords --project ../Custom-Registration.CodeFirst
