@@ -1,6 +1,4 @@
-﻿using Custom_Registration.CodeFirst;
-
-namespace Custom_Registration.Web.Models
+﻿namespace Custom_Registration.Web.Models
 {
     public class CustomerViewModel
     {
